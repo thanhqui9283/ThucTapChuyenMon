@@ -1,0 +1,11 @@
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\bin\Debug\QuanLySach.exe.config
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\bin\Debug\QuanLySach.exe
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\bin\Debug\QuanLySach.pdb
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.csprojAssemblyReference.cache
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.Form1.resources
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.Properties.Resources.resources
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.csproj.GenerateResource.cache
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.csproj.CoreCompileInputs.cache
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.exe
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.pdb
+E:\TTCMQLYSACH\QuanLySach\QuanLySach\QuanLySach\obj\Debug\QuanLySach.QuanLySach.resources
