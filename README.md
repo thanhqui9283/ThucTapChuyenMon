@@ -9,15 +9,16 @@ MSSV: 5951071086
 Giảng viên: Thầy Nguyễn Lê Minh. 
 
 ## Phần 1: Công nghệ sử dụng:
-  
+  Visual Studio 2019
+  Sql Sever 2019
 
 ## Phần 2: Các chức năng đã hoàn thành:
-1. 
-2. 
-3. 
+1. Đăng Nhập , Thêm , xoá, Sửa
+2. Tìm Kiếm , Mua
+3. Thống Kê
 
 
-## Phần 3: Các chức năng chưa hoàn thành:
+## Phần 3: Các Phần chưa hoàn thành:
 1.
 2.
 3.
