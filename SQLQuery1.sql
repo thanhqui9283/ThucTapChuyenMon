@@ -8,13 +8,38 @@ CREATE TABLE DangNhap (
  );
 
 CREATE TABLE KhoSach (
-   [Loại Sách] nvarchar(255) PRIMARY KEY ,
-  [Tên Sách] nvarchar(255),
+   [Loại Sách] nvarchar(255)  ,
+  [Tên Sách] nvarchar(255) PRIMARY KEY,
    [Tác Giả] nvarchar(255),
   [Nhà Xuất Bản] nvarchar(255),
   [Số Lượng] int ,
   [Giá Tiền] int
 );
+
+CREATE TABLE Timkiem (
+   [Loại Sách] nvarchar(255)  ,
+   [Tên Sách] nvarchar(255) PRIMARY KEY,
+   [Tác Giả] nvarchar(255)
+); 
+
+CREATE TABLE Mua (
+   [Loại Sách] nvarchar(255)  ,
+  [Tên Sách] nvarchar(255) PRIMARY KEY,
+  [Số Lượng] int ,
+  [Tiền Lãi] int,
+  [Ngày mua] date 
+);
+
+CREATE TABLE Thongke (
+   [Loại Sách] nvarchar(255)  ,
+  [Tên Sách] nvarchar(255) PRIMARY KEY,
+  [Số Lượng] int ,
+  [Tiền Lãi] int,
+  [Ngày tháng] date 
+);
+
+
+
 
 INSERT INTO Dangnhap (Taikhoan ,Matkhau) VALUES ('Admin' ,'Admin' );
 INSERT INTO Dangnhap (Taikhoan ,Matkhau) VALUES ('Qui' ,'123' );
@@ -38,13 +63,21 @@ VALUES
 	INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
 VALUES
+    (N'Thiếu Nhi', N'doraemon', N'Ngô Tiền', N'TP HN', 5, 100000);
+	INSERT INTO KhoSach
+    ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
+VALUES
     (N'Văn học nghệ thuật', N'Văn Học Mới', 'Thanh Qui', N'TP HCM', 2, 100000);
+	INSERT INTO KhoSach
+    ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
+VALUES
+    (N'Công Nghệ ', N'Lập Trình Mạng 2', N'VĂN AN', N'TP HCM', 5, 100000);
 
 	select * from Dangnhap where Taikhoan='Admin' AND Matkhau='Admin'
     select * from Dangnhap
     select* from KhoSach
 
-	delete from KhoSach where [Tên Sách] = 'Q1';
+	delete from KhoSach where [Tên Sách] = 'AAB';
 
-	drop table Dangnhap
+	drop table KhoSach
 	

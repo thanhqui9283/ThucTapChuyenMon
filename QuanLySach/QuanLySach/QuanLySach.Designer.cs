@@ -76,6 +76,8 @@ namespace QuanLySach
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnDangxuat = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.dataGridViewThongKe = new System.Windows.Forms.DataGridView();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +95,7 @@ namespace QuanLySach
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKho)).BeginInit();
@@ -327,9 +330,9 @@ namespace QuanLySach
             this.Column12,
             this.Column13,
             this.Column14});
-            this.dataGridViewMua.Location = new System.Drawing.Point(298, 228);
+            this.dataGridViewMua.Location = new System.Drawing.Point(292, 228);
             this.dataGridViewMua.Name = "dataGridViewMua";
-            this.dataGridViewMua.Size = new System.Drawing.Size(480, 185);
+            this.dataGridViewMua.Size = new System.Drawing.Size(486, 185);
             this.dataGridViewMua.TabIndex = 3;
             // 
             // Column10
@@ -419,6 +422,7 @@ namespace QuanLySach
             this.txtGiaTien1.Name = "txtGiaTien1";
             this.txtGiaTien1.Size = new System.Drawing.Size(107, 24);
             this.txtGiaTien1.TabIndex = 7;
+            this.txtGiaTien1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaTien1_KeyPress);
             // 
             // txtSoLuong1
             // 
@@ -426,6 +430,7 @@ namespace QuanLySach
             this.txtSoLuong1.Name = "txtSoLuong1";
             this.txtSoLuong1.Size = new System.Drawing.Size(115, 24);
             this.txtSoLuong1.TabIndex = 6;
+            this.txtSoLuong1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong1_KeyPress);
             // 
             // txtTenSach1
             // 
@@ -540,6 +545,8 @@ namespace QuanLySach
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Coral;
+            this.tabPage3.Controls.Add(this.btnDangxuat);
+            this.tabPage3.Controls.Add(this.btnExcel);
             this.tabPage3.Controls.Add(this.dataGridViewThongKe);
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -549,8 +556,29 @@ namespace QuanLySach
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thống Kê";
             // 
+            // btnDangxuat
+            // 
+            this.btnDangxuat.Location = new System.Drawing.Point(702, 0);
+            this.btnDangxuat.Name = "btnDangxuat";
+            this.btnDangxuat.Size = new System.Drawing.Size(91, 27);
+            this.btnDangxuat.TabIndex = 4;
+            this.btnDangxuat.Text = "Đăng xuất";
+            this.btnDangxuat.UseVisualStyleBackColor = true;
+            this.btnDangxuat.Click += new System.EventHandler(this.btnDangxuat_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(675, 168);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(95, 35);
+            this.btnExcel.TabIndex = 3;
+            this.btnExcel.Text = "Xuất Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // dataGridViewThongKe
             // 
+            this.dataGridViewThongKe.AllowUserToAddRows = false;
             this.dataGridViewThongKe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -562,9 +590,9 @@ namespace QuanLySach
             this.Column17,
             this.Column18,
             this.Column19});
-            this.dataGridViewThongKe.Location = new System.Drawing.Point(43, 209);
+            this.dataGridViewThongKe.Location = new System.Drawing.Point(25, 209);
             this.dataGridViewThongKe.Name = "dataGridViewThongKe";
-            this.dataGridViewThongKe.Size = new System.Drawing.Size(689, 232);
+            this.dataGridViewThongKe.Size = new System.Drawing.Size(745, 232);
             this.dataGridViewThongKe.TabIndex = 1;
             // 
             // Column15
@@ -601,16 +629,16 @@ namespace QuanLySach
             this.panel4.Controls.Add(this.dateTimePicker2);
             this.panel4.Controls.Add(this.checkBox4);
             this.panel4.Controls.Add(this.checkBox3);
-            this.panel4.Location = new System.Drawing.Point(43, 21);
+            this.panel4.Location = new System.Drawing.Point(43, 38);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(340, 168);
+            this.panel4.Size = new System.Drawing.Size(340, 165);
             this.panel4.TabIndex = 0;
             // 
             // btnThongKe
             // 
             this.btnThongKe.Location = new System.Drawing.Point(128, 130);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(101, 35);
+            this.btnThongKe.Size = new System.Drawing.Size(101, 32);
             this.btnThongKe.TabIndex = 4;
             this.btnThongKe.Text = "Thống Kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
@@ -804,5 +832,8 @@ namespace QuanLySach
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button btnDangxuat;
     }
 }

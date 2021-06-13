@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using ClosedXML.Excel;
 
 namespace QuanLySach
 {
@@ -18,10 +19,10 @@ namespace QuanLySach
         {
             InitializeComponent();
         }
-        
+
         public object ketnoicsdl()
         {
-            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLySach;Integrated Security=True";
+            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLydangnhap;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
             string query = "select * from KhoSach";
@@ -45,16 +46,16 @@ namespace QuanLySach
         private void BtnThem_Click(object sender, EventArgs e)
         {
 
-           string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLySach;Integrated Security=True";
+            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLydangnhap;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
-            SqlCommand cmd;         
-            string a = "INSERT INTO KhoSach VALUES (N'"+ txtLoaiSach.Text + "',N'" + txtTenSach.Text + "',N'" + txtTacGia.Text + "',N'" + txtNXB.Text + "'," + int.Parse(txtSoLuong.Text) + "," + int.Parse(txtGiaTien.Text) + ")";
+            SqlCommand cmd;
+            string a = "INSERT INTO KhoSach VALUES (N'" + txtLoaiSach.Text + "',N'" + txtTenSach.Text + "',N'" + txtTacGia.Text + "',N'" + txtNXB.Text + "'," + int.Parse(txtSoLuong.Text) + "," + int.Parse(txtGiaTien.Text) + ")";
             cmd = new SqlCommand(a, conn);
             cmd.ExecuteNonQuery();
             XuatGiaoDien1();
             dataGridViewKho.DataSource = ketnoicsdl();
-            
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -66,7 +67,7 @@ namespace QuanLySach
             dataGridViewKho[3, vitri].Value = txtNXB.Text;
             dataGridViewKho[4, vitri].Value = txtSoLuong.Text;
             dataGridViewKho[5, vitri].Value = txtGiaTien.Text;
-            
+
 
         }
 
@@ -89,7 +90,7 @@ namespace QuanLySach
                     if (dataGridViewKho[0, i].Value.ToString() == txtLoaiSach1.Text)
                     {
                         dataGridViewTimKiem.Rows.Add(dataGridViewKho[0, i].Value, dataGridViewKho[1, i].Value, dataGridViewKho[2, i].Value
-                            ,dataGridViewKho[3, i].Value, dataGridViewKho[4, i].Value, dataGridViewKho[5, i].Value);
+                            , dataGridViewKho[3, i].Value, dataGridViewKho[4, i].Value, dataGridViewKho[5, i].Value);
                     }
 
                 }
@@ -142,7 +143,7 @@ namespace QuanLySach
                                     int gia1 = Convert.ToInt32(dataGridViewKho[5, i].Value) / Convert.ToInt32(dataGridViewKho[4, i].Value);
                                     int gia2 = Convert.ToInt32(txtGiaTien1.Text) / Convert.ToInt32(txtSoLuong1.Text);
                                     int tienlai = (gia2 - gia1) * Convert.ToInt32(txtSoLuong1.Text);
-                                    
+
 
                                     dataGridViewMua.Rows.Add(dataGridViewKho[0, i].Value, txtTenSach1.Text, txtSoLuong1.Text
                                         , tienlai.ToString(), dateTimePicker1.Text);
@@ -194,7 +195,7 @@ namespace QuanLySach
 
                 }
             }
-           else if (checkBox4.Checked)
+            else if (checkBox4.Checked)
             {
                 dataGridViewThongKe.Rows.Clear();
                 for (int i = 0; i < dataGridViewMua.Rows.Count - 1; i++)
@@ -207,7 +208,7 @@ namespace QuanLySach
 
                 }
             }
-           else if (checkBox3.Checked && checkBox4.Checked)
+            else if (checkBox3.Checked && checkBox4.Checked)
             {
                 dataGridViewThongKe.Rows.Clear();
                 for (int i = 0; i < dataGridViewMua.Rows.Count - 1; i++)
@@ -216,7 +217,7 @@ namespace QuanLySach
                     {
                         dataGridViewThongKe.Rows.Add(dataGridViewMua[0, i].Value, dataGridViewMua[1, i].Value,
                             dataGridViewMua[2, i].Value, dataGridViewMua[3, i].Value, dataGridViewMua[4, i].Value);
-                            
+
                     }
 
                 }
@@ -238,15 +239,12 @@ namespace QuanLySach
                     txtGiaTien.Text = row.Cells[5].Value.ToString();
 
                 }
-                
+
             }
             catch (Exception) { }
-            
+
         }
 
-    
-
-      
 
         private void QuanLySach_Load(object sender, EventArgs e)
         {
@@ -272,6 +270,87 @@ namespace QuanLySach
         private void QuanLySach_FormClosing(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(1);
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                ToExcel(dataGridViewThongKe, saveFileDialog1.FileName);
+            }
+        }
+
+        private void ToExcel(DataGridView dataGridViewThongKe, string fileName)
+        {
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook workbook;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+
+            try
+            {
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+
+                workbook = excel.Workbooks.Add(Type.Missing);
+
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Sheets["Sheet1"];
+                worksheet.Name = "Quan Ly Ban Sach ";
+
+                // export header
+                for (int i = 0; i < dataGridViewThongKe.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = dataGridViewThongKe.Columns[i].HeaderText;
+                }
+
+                // export content
+                for (int i = 0; i < dataGridViewThongKe.RowCount; i++)
+                {
+                    for (int j = 0; j < dataGridViewThongKe.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dataGridViewThongKe.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+
+                // save workbook
+                workbook.SaveAs(fileName);
+                workbook.Close();
+                excel.Quit();
+                MessageBox.Show("Lưu Thành Công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                workbook = null;
+                worksheet = null;
+            }
+        }
+
+      
+
+        private void txtSoLuong1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
+            if (e.Handled)
+                MessageBox.Show("Vui lòng nhập số", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtGiaTien1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
+            if (e.Handled)
+                MessageBox.Show("Vui lòng nhập số", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDangxuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
