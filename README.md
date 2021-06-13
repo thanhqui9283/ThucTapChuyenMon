@@ -5,7 +5,7 @@ MSSV: 5951071086
      
 * Lớp: Công nghệ thông tin-K59
 
-## Đề tài: 
+## Đề tài: QUẢN LÝ BÁN SÁCH
 Giảng viên: Thầy Nguyễn Lê Minh. 
 
 ## Phần 1: Công nghệ sử dụng:
@@ -21,7 +21,9 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 
 ## Phần 3: Các Phần chưa hoàn thành:
 1.Phân quyền nhân viên
+
 2.báo cáo tồn
+
 3.
 
 ## Hướng dẫn sử dụng:
