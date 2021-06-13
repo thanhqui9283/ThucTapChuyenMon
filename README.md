@@ -26,9 +26,13 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 
 ## Hướng dẫn sử dụng:
 1.dowload code về vào mục QuanLySach ->SetupBanSach->Release->setup
+
 2.Run chương trình.
+
 3.Đăng nhập với tài khoản "Admin" và mật khẩu "Admin".
+
 4.Bắt đầu sử dụng và thao tác nhập liệu với các tính năng của chương trình:KHO SÁCH , BÁN SÁCH ,THÔNG KÊ, TRỢ GIÚP.
+
 5.Sau khi sử dụng xong,click ĐĂNG XUẤT 
 
 Xin cám ơn!
