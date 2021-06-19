@@ -36,7 +36,7 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 
 4.Đăng nhập với tài khoản Khách hàng  "thanhqui123@gmail.com" và mật khẩu "123".
 
-5.Bắt đầu sử dụng và thao tác nhập liệu với các tính năng của chương trình:KHO SÁCH , BÁN SÁCH ,THÔNG KÊ, TRỢ GIÚP.
+5.Bắt đầu sử dụng và thao tác nhập liệu với các tính năng của chương trình:KHO SÁCH , BÁN SÁCH ,THÔNG KÊ, TRỢ GIÚP, KHÁCH HÀNG .
 
 6.Sau khi sử dụng xong,click ĐĂNG XUẤT 
 
