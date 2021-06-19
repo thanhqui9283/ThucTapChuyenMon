@@ -17,12 +17,13 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 2. Tìm Kiếm , Mua.
 3. Thống Kê.
 4. xuất báo cáo bán được trong ngày.
+5. phân quyền nhân viên và khách hàng
 
 
 ## Phần 3: Các Phần chưa hoàn thành:
-1.Phân quyền nhân viên
+1.báo cáo tồn
 
-2.báo cáo tồn
+2.In hoá đơn mua
 
 3.
 
@@ -31,10 +32,12 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 
 2.Run chương trình.
 
-3.Đăng nhập với tài khoản "Admin" và mật khẩu "Admin".
+3.Đăng nhập với tài khoản nhân viên  "Qui" và mật khẩu "123".
 
-4.Bắt đầu sử dụng và thao tác nhập liệu với các tính năng của chương trình:KHO SÁCH , BÁN SÁCH ,THÔNG KÊ, TRỢ GIÚP.
+4.Đăng nhập với tài khoản Khách hàng  "thanhqui123@gmail.com" và mật khẩu "123".
 
-5.Sau khi sử dụng xong,click ĐĂNG XUẤT 
+5.Bắt đầu sử dụng và thao tác nhập liệu với các tính năng của chương trình:KHO SÁCH , BÁN SÁCH ,THÔNG KÊ, TRỢ GIÚP.
 
-Xin cám ơn!
+6.Sau khi sử dụng xong,click ĐĂNG XUẤT 
+
+Xin cám ơn!!
