@@ -95,6 +95,23 @@ namespace QuanLySach
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtDay = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,6 +127,8 @@ namespace QuanLySach
             this.panel4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -118,6 +137,7 @@ namespace QuanLySach
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 1);
             this.tabControl1.Name = "tabControl1";
@@ -732,6 +752,171 @@ namespace QuanLySach
             this.label11.TabIndex = 0;
             this.label11.Text = "LIÊN HỆ";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.Coral;
+            this.tabPage5.Controls.Add(this.label19);
+            this.tabPage5.Controls.Add(this.txtID);
+            this.tabPage5.Controls.Add(this.label18);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.label16);
+            this.tabPage5.Controls.Add(this.label15);
+            this.tabPage5.Controls.Add(this.label14);
+            this.tabPage5.Controls.Add(this.btnUpdate);
+            this.tabPage5.Controls.Add(this.btnDelete);
+            this.tabPage5.Controls.Add(this.btnAdd);
+            this.tabPage5.Controls.Add(this.txtDay);
+            this.tabPage5.Controls.Add(this.txtPhoneNumber);
+            this.tabPage5.Controls.Add(this.txtPass);
+            this.tabPage5.Controls.Add(this.txtEmail);
+            this.tabPage5.Controls.Add(this.txtName);
+            this.tabPage5.Controls.Add(this.dataGridView1);
+            this.tabPage5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tabPage5.Location = new System.Drawing.Point(4, 27);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(796, 453);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Khách hàng";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(514, 61);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(22, 18);
+            this.label19.TabIndex = 15;
+            this.label19.Text = "ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(517, 82);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(100, 24);
+            this.txtID.TabIndex = 14;
+           
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(505, 7);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(102, 18);
+            this.label18.TabIndex = 13;
+            this.label18.Text = "Số Điện Thoại";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(294, 61);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 18);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Ngày Sinh";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(294, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 18);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Pass";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(72, 61);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 18);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Email";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(72, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(61, 18);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Họ & Tên";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(420, 135);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(80, 35);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(235, 135);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(86, 35);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(75, 135);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(80, 35);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtDay
+            // 
+            this.txtDay.Location = new System.Drawing.Point(297, 82);
+            this.txtDay.Name = "txtDay";
+            this.txtDay.Size = new System.Drawing.Size(131, 24);
+            this.txtDay.TabIndex = 5;
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(517, 30);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(147, 24);
+            this.txtPhoneNumber.TabIndex = 4;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(297, 30);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(131, 24);
+            this.txtPass.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(72, 82);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(150, 24);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(72, 30);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(150, 24);
+            this.txtName.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(19, 176);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(745, 256);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // QuanLySach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -740,6 +925,7 @@ namespace QuanLySach
             this.ClientSize = new System.Drawing.Size(822, 492);
             this.Controls.Add(this.tabControl1);
             this.Name = "QuanLySach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLySach";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuanLySach_FormClosing);
             this.Load += new System.EventHandler(this.QuanLySach_Load);
@@ -762,6 +948,9 @@ namespace QuanLySach
             this.tabPage4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -835,5 +1024,22 @@ namespace QuanLySach
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button btnDangxuat;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtDay;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

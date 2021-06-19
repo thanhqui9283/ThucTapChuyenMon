@@ -70,14 +70,14 @@ namespace QuanLySach
             this.txtName.Location = new System.Drawing.Point(123, 78);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(159, 20);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(123, 122);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(159, 20);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
@@ -87,7 +87,7 @@ namespace QuanLySach
             this.btnLogin.Location = new System.Drawing.Point(70, 211);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(102, 31);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -99,7 +99,7 @@ namespace QuanLySach
             this.btnthoat.Location = new System.Drawing.Point(225, 211);
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(106, 31);
-            this.btnthoat.TabIndex = 6;
+            this.btnthoat.TabIndex = 3;
             this.btnthoat.Text = "Thoát";
             this.btnthoat.UseVisualStyleBackColor = false;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
@@ -157,7 +157,7 @@ namespace QuanLySach
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
-            this.Load += new System.EventHandler(this.DangNhap_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

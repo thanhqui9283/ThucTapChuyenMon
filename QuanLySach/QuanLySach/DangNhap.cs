@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+using QuanLySach.DAO;
 
 namespace QuanLySach
 {
@@ -21,45 +22,33 @@ namespace QuanLySach
             InitializeComponent();
         }
 
-        DataTable load(string query)
-        {
-            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLySach;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(connStr);
-            conn.Open();
-            DataTable data = new DataTable();           
-            SqlCommand cmd = new SqlCommand(query, conn);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            adapter.Fill(data);
-            conn.Close();
-            return data;
-
-        }
-  
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
             string tk = txtName.Text;
             string Mk = txtPassword.Text;
-            string query = "select * from DangNhap where TaiKhoan = '" + tk + "' AND MatKhau = '" + Mk + "'";
-            if (check(query))
+            if (LoginDAO.Instance.loginAdmin(tk, Mk))
             {
-                QuanLySach f = new QuanLySach();
+                QuanLySach qls = new QuanLySach();
                 this.Hide();
-             
-                f.ShowDialog();
+                qls.ShowDialog();
+            }
+            else if (LoginDAO.Instance.loginUser(tk, Mk))
+            {
+                User user = new User();
+                user.NameClient = LoginDAO.Instance.getName(tk).ToString();
+                this.Hide();
+                user.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Đăng nhập sai, vui lòng nhập lại","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Đăng nhập thất bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
 
-        bool check(string query)
-        {           
-            return (load(query).Rows.Count > 0);
-        }
+        
 
         private void ckbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
@@ -73,10 +62,7 @@ namespace QuanLySach
                     }
         }
 
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnthoat_Click(object sender, EventArgs e)
         {

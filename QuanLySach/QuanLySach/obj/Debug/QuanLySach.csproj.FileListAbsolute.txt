@@ -42,4 +42,5 @@ C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\bin\Debug
 C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\bin\Debug\stdole.dll
 C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\bin\Debug\Microsoft.Office.Interop.Excel.xml
 C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\bin\Debug\office.xml
-C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Debug\QuanLySach.csprojAssemblyReference.cache
+C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Debug\QuanLySach.User.resources
+C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Debug\QuanLySach.MuaSach.resources

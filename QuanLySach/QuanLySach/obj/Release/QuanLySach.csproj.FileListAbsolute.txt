@@ -32,3 +32,5 @@ C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Relea
 C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Release\QuanLySach.csproj.CopyComplete
 C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Release\QuanLySach.exe
 C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Release\QuanLySach.pdb
+C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Release\QuanLySach.MuaSach.resources
+C:\Users\nguye\OneDrive\Desktop\ThucTapChuyenMon\QuanLySach\QuanLySach\obj\Release\QuanLySach.User.resources

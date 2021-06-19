@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 using ClosedXML.Excel;
+using QuanLySach.DAO;
 
 namespace QuanLySach
 {
@@ -22,7 +23,7 @@ namespace QuanLySach
 
         public object ketnoicsdl()
         {
-            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLydangnhap;Integrated Security=True";
+            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLySach;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
             string query = "select * from KhoSach";
@@ -46,7 +47,7 @@ namespace QuanLySach
         private void BtnThem_Click(object sender, EventArgs e)
         {
 
-            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLydangnhap;Integrated Security=True";
+            string connStr = "Data Source=localhost,1999;Initial Catalog=QuanLySach;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connStr);
             conn.Open();
             SqlCommand cmd;
@@ -249,6 +250,12 @@ namespace QuanLySach
         private void QuanLySach_Load(object sender, EventArgs e)
         {
             dataGridViewKho.DataSource = ketnoicsdl();
+
+
+            dataGridView1.DataSource = QuanLySachDAO.Instance.User();
+            //btnAdd.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
         }
 
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
@@ -348,9 +355,81 @@ namespace QuanLySach
                 MessageBox.Show("Vui lòng nhập số", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+      
         private void btnDangxuat_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            var Mess = MessageBox.Show("Bạn có muốn đăng xuất", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(Mess == DialogResult.Yes)
+            {
+                DangNhap f = new DangNhap();
+                this.Hide();
+                f.ShowDialog();
+            }
         }
+       
+        
+        
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text != "" || txtEmail.Text != "" || txtPass.Text != "" || txtName.Text != "" || txtDay.Text != "" || txtPhoneNumber.Text != "")
+            {
+                QuanLySachDAO.Instance.add(txtName.Text, txtEmail.Text, txtPass.Text, txtDay.Text, txtPhoneNumber.Text);
+                MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridView1.DataSource = QuanLySachDAO.Instance.User();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng không để trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int vitri = dataGridView1.CurrentCell.RowIndex;
+            if (MessageBox.Show("Bạn có muốn xoá dòng Này ", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dataGridView1.Rows.RemoveAt(vitri);
+            }
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int vitri1 = dataGridView1.CurrentCell.RowIndex;
+            dataGridView1[0, vitri1].Value = txtID.Text;
+            dataGridView1[1, vitri1].Value = txtName.Text;
+            dataGridView1[2, vitri1].Value = txtEmail.Text;
+            dataGridView1[3, vitri1].Value = txtPass.Text;
+            dataGridView1[4, vitri1].Value = txtDay.Text;
+            dataGridView1[5, vitri1].Value = txtPhoneNumber.Text;
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+
+                    txtID.Text = row.Cells[0].Value.ToString();
+                    txtName.Text = row.Cells[1].Value.ToString();
+                    txtEmail.Text = row.Cells[2].Value.ToString();
+                    txtPass.Text = row.Cells[3].Value.ToString();
+                    txtDay.Text = row.Cells[4].Value.ToString();
+                    txtPhoneNumber.Text = row.Cells[5].Value.ToString();
+
+                    btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
+                }
+            }
+            catch (Exception) { }
+        }
+
+      
     }
 }

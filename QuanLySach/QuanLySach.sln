@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLySach", "QuanLySach\QuanLySach.csproj", "{97B6CB9D-67FB-4493-AB5D-F3DFCA5B2688}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupBanSach", "SetupBanSach\SetupBanSach.vdproj", "{69C69BE0-9E1F-4636-BB82-0DF8675EBE5F}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupBANSACH", "SetupBANSACH\SetupBANSACH.vdproj", "{34C5F325-572A-4C07-A6BB-D4406573BD1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{97B6CB9D-67FB-4493-AB5D-F3DFCA5B2688}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97B6CB9D-67FB-4493-AB5D-F3DFCA5B2688}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97B6CB9D-67FB-4493-AB5D-F3DFCA5B2688}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69C69BE0-9E1F-4636-BB82-0DF8675EBE5F}.Debug|Any CPU.ActiveCfg = Debug
-		{69C69BE0-9E1F-4636-BB82-0DF8675EBE5F}.Release|Any CPU.ActiveCfg = Release
+		{34C5F325-572A-4C07-A6BB-D4406573BD1A}.Debug|Any CPU.ActiveCfg = Debug
+		{34C5F325-572A-4C07-A6BB-D4406573BD1A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

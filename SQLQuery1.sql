@@ -1,10 +1,13 @@
 ﻿CREATE DATABASE QuanLySach
 
 use QuanLySach
-
-CREATE TABLE DangNhap (
-   TaiKhoan nvarchar(255) PRIMARY KEY ,
-  MatKhau nvarchar(255)
+--- tạo bảng
+CREATE TABLE Staff (
+    NameStaff nvarchar(255),
+	DateOfBirth date,
+	PhoneNumber int,
+    UserName nvarchar(255) PRIMARY KEY ,
+    Pass nvarchar(255)
  );
 
 CREATE TABLE KhoSach (
@@ -38,11 +41,22 @@ CREATE TABLE Thongke (
   [Ngày tháng] date 
 );
 
+Create table Client
+(
+	ID int IDENTITY(1, 1) PRIMARY KEY,
+	NameClient nvarchar(255),
+	Email nvarchar(255),
+	Pass nvarchar(255),
+	DateOfBirth date,
+	PhoneNumber int
+)
 
+----- thêm dữ liệu vào bảng 
+insert into Client values(N'Nguyễn Thanh Qui','thanhqui123@gmail.com','123','2000-01-01',0123456789)
+insert into Client values(N'Nguyễn Thanh Quyền','thanhquyen@gmail.com','123','2000-01-01',087663343)
 
-
-INSERT INTO Dangnhap (Taikhoan ,Matkhau) VALUES ('Admin' ,'Admin' );
-INSERT INTO Dangnhap (Taikhoan ,Matkhau) VALUES ('Qui' ,'123' );
+insert into Staff values(N'Nguyễn Thanh Qui','2000-01-01',0123456789,'Qui','123')
+insert into Staff values(N'Nguyễn Thanh Quyền','2000-10-01',033244455,'Quyen','123')
 
 INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
@@ -51,11 +65,15 @@ VALUES
 	INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
 VALUES
-    (N'Công Nghệ ', N'Lập Trình Mạng', 'Ba Ba', N'TP HCM', 50, 100000);
+    (N'Truyện Tranh ', N'7 viên ngọc rồng', N'Nguyễn Văn chung', N'Hà Nội', 15, 150000);
+	INSERT INTO KhoSach
+    ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
+VALUES
+    (N'Công Nghệ ', N'Giáo Trình Kỹ Thuật Audio Và Video ', N'Nguyễn Tấn Phước', N'TP HCM', 5, 100000);
 		INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
 VALUES
-    (N'Công Nghệ1', N'Lập Trình C', 'Vũ Văn Hùng', N'TP HCM', 2, 100000);
+    (N'Công Nghệ', N'Công Nghệ CNC', N'Vũ Văn Hùng', N'TP HCM', 2, 100000);
 	INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
 VALUES
@@ -67,17 +85,35 @@ VALUES
 	INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
 VALUES
-    (N'Văn học nghệ thuật', N'Văn Học Mới', 'Thanh Qui', N'TP HCM', 2, 100000);
+    (N'Văn học nghệ thuật', N'Văn Học Mới', N'Nguyễn Thanh Qui', N'TP HCM', 2, 100000);
 	INSERT INTO KhoSach
     ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
 VALUES
-    (N'Công Nghệ ', N'Lập Trình Mạng 2', N'VĂN AN', N'TP HCM', 5, 100000);
+    (N'Văn học nghệ thuật ', N' Hai Thế Giới', N'VĂN AN', N'TP HCM', 5, 100000);
+	INSERT INTO KhoSach
+    ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
+VALUES
+    (N'Giáo trình ', N' Mạng Máy Tính', N'Nguyễn Thanh Quyền', N'TP HCM', 5, 100000);
+	INSERT INTO KhoSach
+    ([Loại Sách], [Tên Sách], [Tác Giả], [Nhà Xuất Bản], [Số Lượng], [Giá Tiền])
+VALUES
+    (N'Giáo trình ', N' Lập Trình Mạng ', N'Đỗ Văn Viên', N'TP HCM', 4, 100000);
 
-	select * from Dangnhap where Taikhoan='Admin' AND Matkhau='Admin'
-    select * from Dangnhap
+----------- truy vấn cơ bản
+
+	select *from Client
+   
+    drop table Staff
+	
     select* from KhoSach
 
 	delete from KhoSach where [Tên Sách] = 'AAB';
 
-	drop table KhoSach
-	
+	drop table Client
+
+	select SUM([Giá Tiền]) as 'Thành Tiền' ,[Tên Sách]
+    from KhoSach
+	--Where [Tên Sách]= N'Hai Thế Giới' 
+   group by [Tên Sách]
+
+   select NameClient from Client where Email='thanhquyen@gmail.com'
